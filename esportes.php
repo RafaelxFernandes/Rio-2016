@@ -1,3 +1,13 @@
+<?php
+
+    require "config.php";
+    include "Esporte.php";
+
+    $esporte = new Esporte($mysql);
+    $esportes = $esporte->exibirTodos();
+
+?>
+
 <!DOCTYPE HTML>
 <!-- Bianca, parte essencial desse trabalho. Sem ela eu não teria feito nada. -->
 <html>
@@ -100,86 +110,21 @@
         font-size: 26px;
         margin-right: 15%;">
 
-            <div>
-
-                <ul>
-
-                    <a>
-                        <li>Ciclismo</li>
-                    </a>
-
-                    <a>
-                        <li>Boxing</li>
-                    </a>
-
-                    <a>
-                        <li>Badminton</li>
-                    </a>
-                    
-                    <a>
-                        <li>Atletismo</li>
-                    </a>
-                    
-                    <a>
-                        <li>Arco e flecha</li>
-                    </a>
-                </ul>
-
-            </div>
-
             <div style="margin-top: 5%;">
 
                 <ul>
-
+                <?php foreach ($esportes as $esporte) : ?>
                     <a>
-                        <li>Ciclismo</li>
+                        <li><?php echo $esporte['nome']; ?></li>
                     </a>
 
-                    <a>
-                        <li>Boxing</li>
-                    </a>
-
-                    <a>
-                        <li>Badminton</li>
-                    </a>
-                    
-                    <a>
-                        <li>Atletismo</li>
-                    </a>
-                    
-                    <a>
-                        <li>Arco e flecha</li>
-                    </a>
+                    <?php endforeach; ?>
+                   
                 </ul>
         
             </div>
 
-            <div style="margin-top: 5%;">
 
-                    <ul>
-
-                        <a>
-                            <li>Ciclismo</li>
-                        </a>
-
-                        <a>
-                            <li>Boxing</li>
-                        </a>
-
-                        <a>
-                            <li>Badminton</li>
-                        </a>
-                        
-                        <a>
-                            <li>Atletismo</li>
-                        </a>
-                        
-                        <a>
-                            <li>Arco e flecha</li>
-                        </a>
-                    </ul>
-
-            </div>
 
         </div>
 
