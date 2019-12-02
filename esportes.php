@@ -93,11 +93,18 @@
         </div>
     </header>
 
-    <body>
+    <body style="background-color: white;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Saira', sans-serif;
+    padding-top: 2%;
+    margin: 0%">
 
         <div style="background-color: #0087C6;
         padding-top: 2%;
         padding-bottom: 2%;
+        margin-top:2%;
         color: white;
         font-size: 42px;
         font-weight: 1000;">
