@@ -1,3 +1,13 @@
+<?php
+
+    require "config.php";
+    include "Evento.php";
+
+    $evento = new Evento($mysql);
+    $eventos = $evento->exibirTodos();
+
+?>
+
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -90,7 +100,7 @@
     padding-top: 2%;
     margin: 0%">
 
-        <div style="background-color: #039E38;
+        <div style="background-color: #F0C400;
         padding-top: 2%;
         padding-bottom: 2%;
         margin-top:2%;
@@ -98,7 +108,7 @@
         font-size: 42px;
         font-weight: 1000;">
 
-            <p style="text-align: center;">Países</p>
+            <p style="text-align: center;">Eventos</p>
 
         </div>
 
@@ -106,69 +116,36 @@
         font-size: 26px;
         margin-right: 15%;">
 
-            <div style="margin-top: 5%;">
+            <div style="margin-top: 2%;">
 
-                <ul>
+                <p style="color:#8B8B8B;
+                font-weight: 800;
+                font-size: 15px;
+                margin-left: 15%;
+                word-spacing: 20em;
+                margin-bottom:1%;">NOME ESPORTE LOCAL</p>
 
-                    <a>
-                        <li>Afeganistão</li>
-                    </a>
+                <hr style="margin-left: 15%;
+                margin-top:0%;">
 
-                    <a>
-                        <li style="padding-left:20%;
-                        padding-right: 20%">Albânia</li>
-                    </a>
+                <ul style="font-size: 25px;
+                margin-left: -80%;">
 
-                    <a>
-                        <li>Argélia</li>
-                    </a>
+                    <?php foreach ($eventos as $evento) : ?>
+                    
+                        <li style="padding-left: -40%;"><?php echo $evento['Nome']; ?></li>
+                        <li><?php echo $evento['Esporte']; ?></li>
+                        <li style="padding-left: -30%;"><?php echo $evento['Local']; ?></li>
+                    
+
+                    <?php endforeach; ?>
+                    
 
                 </ul>
 
             </div>
 
-            <div style="margin-top: 5%;">
-                
-                <ul>
-
-                    <a>
-                        <li>Afeganistão</li>
-                    </a>
-
-                    <a>
-                        <li style="padding-left:20%;
-                        padding-right: 20%">Albânia</li>
-                    </a>
-
-                    <a>
-                        <li>Argélia</li>
-                    </a>
-
-                </ul>
             
-            </div>
-
-            <div style="margin-top: 5%;">
-
-                <ul>
-
-                    <a>
-                        <li>Afeganistão</li>
-                    </a>
-
-                    <a>
-                        <li style="padding-left:20%;
-                        padding-right: 20%">Albânia</li>
-                    </a>
-
-                    <a>
-                        <li>Argélia</li>
-                    </a>
-
-                </ul>
-    
-            </div>
-
         </div>
 
     </body>

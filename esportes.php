@@ -116,9 +116,7 @@
         <div style="padding-top: 5%;
         font-size: 26px;
         margin-right: 15%;">
-
-            <div style="margin-top: 5%;">
-
+        
                 <ul>
                 <?php foreach ($esportes as $esporte) : ?>
                     <a>
@@ -128,10 +126,6 @@
                     <?php endforeach; ?>
                    
                 </ul>
-        
-            </div>
-
-
 
         </div>
 

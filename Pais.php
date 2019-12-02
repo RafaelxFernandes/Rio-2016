@@ -1,5 +1,5 @@
 <?php
-class Esporte
+class Pais
 {
     private $mysql;
     public function __construct(mysqli $mysql)
@@ -8,7 +8,7 @@ class Esporte
     }
     public function exibirTodos()
     {
-        $resultado = $this->mysql->query('SELECT nome FROM esporte');
+        $resultado = $this->mysql->query('SELECT nome FROM pais');
         $esportes = $resultado->fetch_all(MYSQLI_ASSOC);
         return $esportes;
     }

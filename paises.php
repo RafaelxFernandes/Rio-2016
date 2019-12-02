@@ -1,3 +1,14 @@
+<?php
+
+    require "config.php";
+    include "Pais.php";
+
+    $pais = new Pais($mysql);
+    $paises = $pais->exibirTodos();
+
+?>
+
+
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -90,7 +101,7 @@
     padding-top: 2%;
     margin: 0%">
 
-        <div style="background-color: #F0C400;
+        <div style="background-color: #039E38;
         padding-top: 2%;
         padding-bottom: 2%;
         margin-top:2%;
@@ -98,7 +109,7 @@
         font-size: 42px;
         font-weight: 1000;">
 
-            <p style="text-align: center;">Eventos</p>
+            <p style="text-align: center;">Países</p>
 
         </div>
 
@@ -106,38 +117,23 @@
         font-size: 26px;
         margin-right: 15%;">
 
-            <div style="margin-top: 2%;">
+            <div style="margin-top: 5%;">
 
-                <p style="color:#8B8B8B;
-                font-weight: 800;
-                font-size: 15px;
-                margin-left: 15%;
-                word-spacing: 20em;
-                margin-bottom:1%;">NOME ESPORTE LOCAL</p>
+                <ul>
 
-                <hr style="margin-left: 15%;
-                margin-top:0%;">
-
-                <ul style="font-size: 25px;
-                margin-left: -80%;">
-
+                <?php foreach ($paises as $pais) : ?>
                     <a>
-                        <li style="padding-left: -40%;">Olympic Stadium</li>
-                    </a>
+                        <li><?php echo $pais['nome']; ?></li>
+                </a>
 
-                    <a>
-                        <li>Aquatics</li>
-                    </a>
-
-                    <a>
-                        <li style="padding-left: -30%;">Women's 100m Backstroke</li>
-                    </a>
+                    <?php endforeach; ?>
 
                 </ul>
 
             </div>
 
-            
+           
+
         </div>
 
     </body>
